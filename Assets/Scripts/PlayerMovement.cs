@@ -19,9 +19,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey("d"))
-            rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
-        if()
+        if(Input.GetKey("d"))
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+
+        if (Input.GetKey("a"))
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+
     }
 }
