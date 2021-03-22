@@ -21,11 +21,12 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
-        if(Input.GetKey("d"))
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+        /*ForceMode velocityChange - "Add an instant velocity change to the rigidbody, ignoring its mass." - https://docs.unity3d.com/ScriptReference/ForceMode.VelocityChange.html */
+        if (Input.GetKey("d"))
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
         if (Input.GetKey("a"))
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
 
     }
 }

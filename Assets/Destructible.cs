@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCollision : MonoBehaviour
+public class Destructible : MonoBehaviour
 {
 
-    public PlayerMovement movement;
     public GameObject brokenCrate;
 
     // Start is called before the first frame update
@@ -20,11 +19,11 @@ public class PlayerCollision : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collisionInfo)
+    void OnCollisionEnter(Collision col)
     {
-        if (collisionInfo.collider.tag == "Obstacle")
-        {
-            movement.enabled = false;
+        if (col.collider.tag != "Ground") { 
+        Instantiate(brokenCrate, transform.position, transform.rotation);
+        Destroy(gameObject);
         }
     }
 }

@@ -60,6 +60,8 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerCollision.cs" />
+    <Compile Include="Assets\Score.cs" />
+    <Compile Include="Assets\Destructible.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
